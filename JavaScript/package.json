@@ -1,0 +1,26 @@
+{
+  "name": "FizzBuzz-Enterprise-Edition-for-JavaScript",
+  "description": "JavaScript implementation of a FizzBuzz for enterprises.",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Joimer/FizzBuzz/JavaScript"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "eslint . && mocha"
+  },
+  "author": {
+    "name": "Juanma Serrano",
+    "email": "juanmadss@gmail.com"
+  },
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "eslint": "^1.9.0",
+    "mocha": "^2.3.4"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}
