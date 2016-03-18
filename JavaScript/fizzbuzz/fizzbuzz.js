@@ -7,6 +7,7 @@ class FizzBuzz {
 	* @constructor
 	*/
 	constructor(fizzBuzzConfiguration) {
+		this.rules = {};
 		this.loadConfiguration(fizzBuzzConfiguration);
 	}
 
@@ -18,14 +19,11 @@ class FizzBuzz {
 		if (!(fizzBuzzConfiguration instanceof FizzBuzzConfiguration)) {
 			fizzBuzzConfiguration = new FizzBuzzConfiguration();
 		}
-		this.fizzNumber = fizzBuzzConfiguration.getFizzNumber() || 3;
-		this.buzzNumber = fizzBuzzConfiguration.getBuzzNumber() || 5;
-		this.fizzWord = fizzBuzzConfiguration.getFizzWord() || 'Fizz';
-		this.buzzWord = fizzBuzzConfiguration.getBuzzWord() || 'Buzz';
+		this.rules = fizzBuzzConfiguration.getRules();
 	}
 
 	/**
-	* Runs a number a returns the proper program value.
+	* Runs a number a returns the proper program value according to specified rules.
 	*
 	* @param {Int} number the number to get.
 	* @return {String} The result of the operation.
@@ -33,14 +31,11 @@ class FizzBuzz {
 	run(number) {
 		let output = '';
 
-		// Check the fizz number.
-		if (!(number % this.fizzNumber)) {
-			output = this.fizzWord;
-		}
-
-		// Now check the buzz number, which gets concatenated.
-		if (!(number % this.buzzNumber)) {
-			output += this.buzzWord;
+		// Add a word for each rule it meets.
+		for (let divisible in this.rules) {
+			if (!(number % divisible)) {
+				output += this.rules[divisible];
+			}
 		}
 
 		// If neither...

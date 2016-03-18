@@ -24,10 +24,9 @@ describe('FizzBuzz', function () {
 describe('altered FizzBuzz', function () {
 	let fizzBuzz = new FizzBuzz();
 	let fizzBuzzConfiguration = new FizzBuzzConfiguration();
-	fizzBuzzConfiguration.setFizzNumber(4);
-	fizzBuzzConfiguration.setBuzzNumber(6);
-	fizzBuzzConfiguration.setFizzWord('Lol');
-	fizzBuzzConfiguration.setBuzzWord('Kek');
+	fizzBuzzConfiguration.eraseAllRules();
+	fizzBuzzConfiguration.addRule(4, 'Lol');
+	fizzBuzzConfiguration.addRule(6, 'Kek');
 	fizzBuzz.loadConfiguration(fizzBuzzConfiguration);
 
 	it('should be 3 on 3', function () {
